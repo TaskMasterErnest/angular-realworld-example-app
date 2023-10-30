@@ -31,4 +31,5 @@ jobs:
     - name: Test and Build
       run: |
         ng build 
+        ls -la
         ng test
