@@ -1,0 +1,33 @@
+name: AngularJS - Build & Test Phase
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2 
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Setup NPM & Angular CLI
+      run: |
+        npm install
+        npm install -g @angular/cli
+        npm install --global yarn
+
+    - name: Test and Build
+      run: |
+        ng test
+        ng build 
