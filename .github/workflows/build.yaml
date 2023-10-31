@@ -24,7 +24,6 @@ jobs:
     - name: Setup NPM & Angular CLI
       run: |
         npm install
-        npm audit fix
         npm install -g @angular/cli
         npm install --global yarn
 
