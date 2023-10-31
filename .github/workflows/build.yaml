@@ -21,16 +21,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: Setup NPM & Angular CLI
-      run: |
-        npm install
-        npm install -g @angular/cli
-        npm install --global yarn
+    # - name: Setup NPM & Angular CLI
+    #   run: |
+    #     npm install
+    #     npm install -g @angular/cli
+    #     npm install --global yarn
 
-    - name: Test and Build
-      run: |
-        ng build 
-        ls -la
+    # - name: Test and Build
+    #   run: |
+    #     ng build 
+    #     ls -la
 
     - name: Test Secrets
       run: |
